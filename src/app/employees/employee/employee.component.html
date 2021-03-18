@@ -1,0 +1,38 @@
+<div *ngIf="message">
+    <span style="color: green;">{{message}}</span>
+</div>
+<form #form="ngForm" (submit)="onSubmit(form)">
+  <legend style="text-align: center;">Form Dang Ky</legend>
+  <input type="hidden" name="EmployeeID" #EmployeeID="ngModel" [(ngModel)]="service.formData.EmployeeID">
+  <div class="form-group">
+    <label for="">FullName</label>
+    <input type="text"name="FullName" #FullName="ngModel" [(ngModel)]="service.formData.FullName" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="">Position</label>
+    <input type="text"name="Position" #FullName="ngModel" [(ngModel)]="service.formData.Position" class="form-control">
+  </div>
+  <div class="row">
+    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+      <label for="">EMP Code</label>
+      <input type="text"name="EMPCode" #FullName="ngModel" [(ngModel)]="service.formData.EMPCode" class="form-control">
+    </div>
+    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+      <label for="">Mobile</label>
+      <input type="text"name="Mobile" #FullName="ngModel" [(ngModel)]="service.formData.Mobile" class="form-control">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="form-group">
+        <button class=" form-control btn btn-primary" >Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="form-group">
+    <button (click) ="resetForm()" class=" form-control btn btn-primary" >Reset</button>
+  </div>
+</div>
